@@ -23,6 +23,11 @@ class CarManager():
             new_car.goto(300, random_y)
             self.all_cars.append(new_car)
     
+    def remove_cars(self):
+        for car in self.all_cars:
+            if car.xcor() < -300:
+                self.all_cars.remove(car)
+    
     def move_cars(self):
         for car in self.all_cars:
             car.backward(self.car_speed)

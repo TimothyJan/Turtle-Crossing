@@ -15,6 +15,7 @@ scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkeypress(player.go_up,"Up")
+screen.onkeypress(player.go_down, "Down")
 
 game_is_on = True
 while game_is_on:
@@ -24,6 +25,7 @@ while game_is_on:
     """Create and move cars"""
     car_manager.create_cars()
     car_manager.move_cars()
+    car_manager.remove_cars()
 
     """Detect collision with car"""
     for car in car_manager.all_cars:
