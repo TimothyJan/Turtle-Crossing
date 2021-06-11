@@ -23,6 +23,18 @@ class Player(Turtle):
             self.go_to_start()
         else:
             self.backward(MOVE_DISTANCE)
+    
+    def go_right(self):
+        if self.xcor() > 280:
+            self.goto(275,self.ycor())
+        else:
+            self.goto(self.xcor()+MOVE_DISTANCE,self.ycor())
+
+    def go_left(self):
+        if self.xcor() < -280:
+            self.goto(-275,self.ycor())
+        else:
+            self.goto(self.xcor()-MOVE_DISTANCE,self.ycor())
 
     def go_to_start(self):
         self.goto(STARTING_POSITION)
